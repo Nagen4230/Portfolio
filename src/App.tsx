@@ -14,7 +14,7 @@ export const App: React.FC = () => {
   const [activeModalProject, setActiveModalProject] = useState<ProjectItem | null>(null);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Portfolio">
       {/* Accessibility Skip Link */}
       <SkipLink />
 
