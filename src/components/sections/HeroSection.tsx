@@ -40,27 +40,31 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenAI }) => {
             </h1>
 
             {/* Profile Picture placed prominently beside summary */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 p-4 rounded-2xl glass-card border border-neutral-800">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 p-5 rounded-2xl glass-card border border-neutral-800 shadow-2xl relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-crimson-600/10 rounded-full blur-2xl pointer-events-none" />
               <div className="relative shrink-0">
                 <img
-                  src="/images/profile.jpg"
+                  src="./images/profile.jpg"
                   alt="Nagendran Murugan"
-                  className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover border-2 border-crimson-500 shadow-[0_0_20px_rgba(220,38,38,0.4)]"
+                  className="w-24 h-28 sm:w-28 sm:h-32 rounded-2xl object-cover object-top border-2 border-crimson-500 shadow-[0_0_25px_rgba(220,38,38,0.45)] group-hover:border-gold-400 group-hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] transition-all duration-300"
                   onError={(e) => {
                     (e.target as HTMLElement).style.display = 'none';
                   }}
                 />
-                <span className="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 rounded-full border-2 border-obsidian-950 shadow-sm" />
+                <span className="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 rounded-full border-2 border-obsidian-950 shadow-sm" title="Available for Internships" />
               </div>
-              <div className="space-y-1">
+              <div className="space-y-1.5 flex-1">
                 <div className="flex items-center gap-2">
-                  <span className="text-base font-bold text-white">{RESUME_DATA.candidate.name}</span>
-                  <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-gold-500/20 text-gold-400 border border-gold-500/30">
+                  <span className="text-base sm:text-lg font-bold text-white tracking-tight">{RESUME_DATA.candidate.name}</span>
+                  <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-gold-500/20 text-gold-400 border border-gold-500/30 font-semibold">
                     4.00 CGPA
                   </span>
                 </div>
-                <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed">
-                  High-achieving First-Year Software Engineering student at <strong className="text-white">Universiti Malaya</strong>. Proficient in <strong className="text-gold-400">Python</strong>, expanding into <strong className="text-gold-400">Java</strong> and modern <strong className="text-neutral-200">AI-assisted development tools</strong>, state-level competitive coding winner, and experienced video editor.
+                <p className="text-xs font-mono text-crimson-400">
+                  Universiti Malaya • Bachelor of Computer Science (Software Engineering)
+                </p>
+                <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed pt-1">
+                  High-achieving First-Year Software Engineering student with a disciplined foundation in <strong className="text-gold-400">Python</strong>, expanding into <strong className="text-gold-400">Java</strong> and modern <strong className="text-neutral-200">AI-assisted development tools</strong>, state-level competitive coding winner, and experienced video editor.
                 </p>
               </div>
             </div>
